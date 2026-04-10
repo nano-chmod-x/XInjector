@@ -10,8 +10,8 @@ This is a tool that can be used to inject any elf files into any android applica
 # Build
 Clone the project
 ```
-$ git clone https://code.byted.org/xiawanli/Xinjector.git
-$ cd Xinjector
+git clone https://github.com/nano-chmod-x/XInjector.git
+cd Xinjector
 ```
 
 ## Method 1: Using build script (Recommended)
