@@ -17,19 +17,19 @@ cd Xinjector
 ## Method 1: Using build script (Recommended)
 Use the provided build script which automatically handles NDK_TOOLCHAIN environment variable:
 ```
-$ ./build.sh
+./build.sh
 ```
 
 ## Method 2: Using ndk-build directly
 If you encounter the error "NDK_TOOLCHAIN is defined to the unsupported value", you need to unset the NDK_TOOLCHAIN environment variable first:
 ```
-$ unset NDK_TOOLCHAIN
-$ ndk-build
+unset NDK_TOOLCHAIN
+ndk-build
 ```
 
 Or specify the NDK path explicitly:
 ```
-$ unset NDK_TOOLCHAIN && /path/to/ndk/ndk-build
+unset NDK_TOOLCHAIN && /path/to/ndk/ndk-build
 ```
 
 ## Method 3: Using GitHub Actions (Automated Build)
@@ -60,20 +60,20 @@ libs/arm64-v8a/xinjector
 # How to use
 Push the xinjector and the so to be injected into /data/local/tmp on the android device.
 ```
-$ adb push libs/arm64-v8a/xinjector /data/local/tmp
-$ adb push libnative-lib.so /data/local/tmp
+adb push libs/arm64-v8a/xinjector /data/local/tmp
+adb push libnative-lib.so /data/local/tmp
 ```
 Execute the xinjector file:
 ```
-$ adb shell
-$ su
-$ cd /data/local/tmp
-$ ./xinjector package_name /data/local/tmp/libnative-lib.so entry_point_function_name entry_point_parameters
+adb shell
+su
+cd /data/local/tmp
+./xinjector package_name /data/local/tmp/libnative-lib.so entry_point_function_name entry_point_parameters
 ```
 
 Or with `-r` flag to restart the app before injection:
 ```
-$ ./xinjector -r package_name /data/local/tmp/libnative-lib.so entry_point_function_name entry_point_parameters
+./xinjector -r package_name /data/local/tmp/libnative-lib.so entry_point_function_name entry_point_parameters
 ```
 
 **Parameters:**
